@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>gr.aueb.dmst.nkakonas</groupId>
+    <artifactId>seip2022_practical_assignments</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>gradeshistogram</module>
+    </modules>
+
+    <name>seip2022_practical_assignments</name>
+    <description>This is a repository for all the assignments of the qurent semester. This repository is using Maven for better organization.
+        So all the projects that are going to be made in this repository, will follow the maven structure.</description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+
+</project>
