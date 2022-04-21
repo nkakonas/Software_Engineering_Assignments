@@ -13,6 +13,7 @@ import org.jfree.data.xy.XYSeriesCollection;
 public class HistogramGenerator {
 
     public int[] makeGradesTable(String fileName) throws FileNotFoundException {
+        // use the file in order to count the number of grades, that it contains
         File file = new File(fileName);
         Scanner scanCount = new Scanner(file);
         int countGrades = 0;
@@ -21,6 +22,8 @@ public class HistogramGenerator {
             scanCount.nextLine();
         }
         scanCount.close();
+
+        // extract the data form the file and save them into the array grades[countGrades]
         Scanner scan = new Scanner(file);
         int[] grades = new int[countGrades];
         for (int i = 0; i < grades.length; i++) {
@@ -32,19 +35,19 @@ public class HistogramGenerator {
 
     public void printThePlot(int[] grades) {
         /*
-		 * The XYSeriesCollection object is a set XYSeries series (dataset) that
-		 * can be visualized in the same chart
-		 */
-		XYSeriesCollection dataset = new XYSeriesCollection();
-		/*
-		 * The XYSeries that are loaded in the dataset. There might be many
-		 * series in one dataset.
-		 */
-		XYSeries data = new XYSeries("grades");
+         * The XYSeriesCollection object is a set XYSeries series (dataset) that
+         * can be visualized in the same chart
+         */
+        XYSeriesCollection dataset = new XYSeriesCollection();
         /*
-		 * freq is a table with all the frequencies of the grades of all the students.
-		 * First we initialize freq table
-		 */
+         * The XYSeries that are loaded in the dataset. There might be many
+         * series in one dataset.
+         */
+        XYSeries data = new XYSeries("grades");
+        /*
+         * freq is a table with all the frequencies of the grades of all the students.
+         * First we initialize freq table
+         */
         int[] freq = new int[11];
         for (int i = 0; i < freq.length; i++) {
             freq[i] = 0;
@@ -54,35 +57,38 @@ public class HistogramGenerator {
         for (int i = 0; i < grades.length; i++) {
             freq[grades[i]]++;
         }
+        /*
+         * Populating the XYSeries data object from the input Integer array
+         * values.
+         */
+        for (int i = 0; i < freq.length; i++) {
+            data.add(i, freq[i]);
+        }
 
-		/*
-		 * Populating the XYSeries data object from the input Integer array
-		 * values.
-		 */
-		for (int i = 0; i < freq.length; i++) {
-			data.add(i, freq[i]);
-		}
+        // add the series to the dataset
+        dataset.addSeries(data);
 
-		// add the series to the dataset
-		dataset.addSeries(data);
+        // Declare and initialize a createXYLineChart JFreeChart
+        JFreeChart chart = ChartFactory.createXYLineChart("Frequency of Grades", "Grades", "Frequency", dataset);
 
-		// Declare and initialize a createXYLineChart JFreeChart
-		JFreeChart chart = ChartFactory.createXYLineChart("Frequency of Grades", "Grades", "Frequency", dataset);
-
-		/*
-		 * Initialize a frame for visualizing the chart and attach the
-		 * previously created chart.
-		 */
-		ChartFrame frame = new ChartFrame("First", chart);
-		frame.pack();
-		// makes the previously created frame visible
-		frame.setVisible(true);
+        /*
+         * Initialize a frame for visualizing the chart and attach the
+         * previously created chart.
+         */
+        ChartFrame frame = new ChartFrame("First", chart);
+        frame.pack();
+        // makes the previously created frame visible
+        frame.setVisible(true);
     }
 
     public static void main(String[] args) throws FileNotFoundException {
+        // object used to call the methods
         HistogramGenerator histGen = new HistogramGenerator();
-        // take the table with all the grades
+
+        // take the table with all the grades from txt file
         int[] grades = histGen.makeGradesTable(args[0]);
+
+        // print the Histogram
         histGen.printThePlot(grades);
     }
 
