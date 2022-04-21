@@ -3,6 +3,7 @@ package gr.aueb.dmst.nkakonas;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -11,8 +12,8 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 public class HistogramGenerator {
 
-    private int[] makeGradesTable() throws FileNotFoundException {
-        File file = new File("C:/Users/nikos/Desktop/grades.txt");
+    public int[] makeGradesTable(String fileName) throws FileNotFoundException {
+        File file = new File(fileName);
         Scanner scanCount = new Scanner(file);
         int countGrades = 0;
         while (scanCount.hasNextLine()) {
@@ -29,7 +30,7 @@ public class HistogramGenerator {
         return grades;
     }
 
-    private void printThePlot(int[] grades) {
+    public void printThePlot(int[] grades) {
         /*
 		 * The XYSeriesCollection object is a set XYSeries series (dataset) that
 		 * can be visualized in the same chart
@@ -66,7 +67,7 @@ public class HistogramGenerator {
 		dataset.addSeries(data);
 
 		// Declare and initialize a createXYLineChart JFreeChart
-		JFreeChart chart = ChartFactory.createHistogram("Frequency of Grades", "Grades", "Frequency", dataset);
+		JFreeChart chart = ChartFactory.createXYLineChart("Frequency of Grades", "Grades", "Frequency", dataset);
 
 		/*
 		 * Initialize a frame for visualizing the chart and attach the
@@ -81,7 +82,7 @@ public class HistogramGenerator {
     public static void main(String[] args) throws FileNotFoundException {
         HistogramGenerator histGen = new HistogramGenerator();
         // take the table with all the grades
-        int[] grades = histGen.makeGradesTable();
+        int[] grades = histGen.makeGradesTable(args[0]);
         histGen.printThePlot(grades);
     }
 
