@@ -12,26 +12,45 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 public class HistogramGenerator {
 
-    public int[] makeGradesTable(String fileName) throws FileNotFoundException {
-        // use the file in order to count the number of grades, that it contains
-        File file = new File(fileName);
+    public int[] makeGradesTable(String path) throws FileNotFoundException {
+        /*
+         * use the file in order to count the number of grades, that it contains
+         */
+
+        // the parameter path has the path that the user has typed from command line
+        File file = new File(path);
+        // the object file passes to the Scanner so that we can read it
         Scanner scanCount = new Scanner(file);
+        // initialize the count of Grades to zero (0)
         int countGrades = 0;
+        // while there is an other line, which means that there is an other grade in the file, we add one (1) to the countGrades variable
         while (scanCount.hasNextLine()) {
             countGrades++;
+            // go to the next line of the file
             scanCount.nextLine();
         }
+        // close the scanner
         scanCount.close();
 
-        // extract the data form the file and save them into the array grades[countGrades]
+        /*
+         * extract the data form the file and save them into the array grades[countGrades]
+         */
+
+        // read the file again, in order to start again from the first line
         Scanner scan = new Scanner(file);
+        // initialize the array "grades" with grades.length = countGrades
         int[] grades = new int[countGrades];
+        /*
+         * Every line of the file has its own grade. So for every line of the grades.txt file we take 
+         * the grade and insert it in the grades array
+         */
         for (int i = 0; i < grades.length; i++) {
             grades[i] = Integer.parseInt(scan.nextLine());
         }
+        // close the scanner
         scan.close();
         return grades;
-    }
+    } // End of method makeGradesTable
 
     public void printThePlot(int[] grades) {
         /*
@@ -79,7 +98,7 @@ public class HistogramGenerator {
         frame.pack();
         // makes the previously created frame visible
         frame.setVisible(true);
-    }
+    } // End of method printThePlot
 
     public static void main(String[] args) throws FileNotFoundException {
         // object used to call the methods
@@ -90,6 +109,6 @@ public class HistogramGenerator {
 
         // print the Histogram
         histGen.printThePlot(grades);
-    }
+    } // End of main
 
-}
+} // End of class HistogramGenerator
