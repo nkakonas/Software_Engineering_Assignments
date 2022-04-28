@@ -14,10 +14,6 @@
     <name>gradehistogram</name>
     <description>This is a maven project which takes some grades of some students and makes a histogram.</description>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
 
     <dependencies>
         <dependency>
