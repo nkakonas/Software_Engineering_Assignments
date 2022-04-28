@@ -10,7 +10,7 @@
 
 ## Purpose of the project:
 
-- This project is using Maven for better organization. So all the projects that are going to be made in this folder, will follow the maven structure.
+- This project is using Maven for better organization.
 - In this project there is a java script, that takes some grades from a .txt file and creates a frequency histogram for these grades.
 
 ##### [back to the contents](#contents)
