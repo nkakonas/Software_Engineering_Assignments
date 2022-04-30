@@ -108,7 +108,7 @@ public class HistogramGenerator {
         dataset.addSeries(data);
 
         // Declare and initialize a createXYLineChart JFreeChart
-        JFreeChart chart = ChartFactory.createXYLineChart("Frequency of Grades", "Grades", "Frequency", dataset);
+        JFreeChart chart = ChartFactory.createXYLineChart("Frequency of Grades", "Grades", "Students", dataset);
 
         /*
          * Initialize a frame for visualizing the chart and attach the
