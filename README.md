@@ -1,4 +1,6 @@
-# Grades Histogram
+# Software Engeneering Assignments
+
+[![Build Status](https://app.travis-ci.com/NikosKakonas/Software_Engineer_Assignments.svg?token=q3jjbE7gJy3ezkAwFoGo&branch=development)](https://app.travis-ci.com/NikosKakonas/Software_Engineer_Assignments)
 
 ## Contents
 
@@ -28,7 +30,7 @@
 
 ## How to build the projects
 - Clone the repository into your computer
-- Inside the folder Software_Engineer_Assignments type:
+- Inside the folder Software_Engineering_Assignments type:
 ```bash
 $ mvn package
 ```
