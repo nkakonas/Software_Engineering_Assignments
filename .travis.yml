@@ -1,0 +1,17 @@
+language: java
+
+jdk:
+  - openjdk17
+
+branches:
+  only:
+  - development
+
+before_script:
+  - ls -la
+
+script:
+  - mvn clean package
+
+after_success:
+  - echo "Process terminated successfully!"
