@@ -26,4 +26,26 @@ public class MyMath {
         }
     }
 
+    /**
+	 * Calculates if a number is prime
+	 * @param n the integer that we say if it is prime
+	 * @return true if it is prime and fasle if not
+	 * @exception IllegalArgumentException when n < 2
+	 */
+    public boolean isPrime(int n) {
+        if (n < 2) throw new IllegalArgumentException();
+        boolean prime = true;
+        if(n <= 1) {
+            prime = false;
+            return prime;
+        } else {
+            for (int i = 2; i<= n/2; i++) {
+                if ((n % i) == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+        return prime;
+        }
+    }
 }

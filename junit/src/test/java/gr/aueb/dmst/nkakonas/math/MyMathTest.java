@@ -1,5 +1,6 @@
 package gr.aueb.dmst.nkakonas.math;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -23,7 +24,7 @@ public class MyMathTest {
 	 * while using a number greater than 12 as an input.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void test_factorial_greater_than_12() {
+	public void testFactorialGreaterThan12() {
 		myMath.factorial(13);
 	}
 
@@ -32,7 +33,32 @@ public class MyMathTest {
 	 * while using a negative number.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void test_factorial_negative() {
+	public void testFactorialNegative() {
 		myMath.factorial(-1);
+	}
+
+	@Test (expected = IllegalArgumentException.class)
+	public void testIsPrimeNegativeNumber() {
+		myMath.isPrime(-3);
+	}
+
+	@Test (expected = IllegalArgumentException.class)
+	public void testIsPrimeZero() {
+		myMath.isPrime(0);
+	}
+
+	@Test (expected = IllegalArgumentException.class)
+	public void testIsPrimePositiveNumberSmallerFrom2() {
+		myMath.isPrime(1);
+	}
+
+	@Test
+	public void testIsPrimeYes() {
+		Assert.assertEquals(true, myMath.isPrime(3));
+	}
+
+	@Test
+	public void testIsPrimeNo() {
+		Assert.assertEquals(false, myMath.isPrime(4));
 	}
 }
