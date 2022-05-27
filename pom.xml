@@ -14,7 +14,7 @@
   <modules>
             
     <module>gradeshistogram</module>
-    <module>junit</module>
+    <module>unittesting</module>
 
   </modules>
       

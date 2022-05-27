@@ -8,9 +8,9 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>junit</artifactId>
+  <artifactId>unittesting</artifactId>
 
-  <name>junit</name>
+  <name>unittesting</name>
   <description>The purpose of this project is to make some unit tests in the code.</description>
 
 
