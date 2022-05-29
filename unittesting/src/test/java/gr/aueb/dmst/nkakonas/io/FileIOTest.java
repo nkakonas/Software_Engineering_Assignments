@@ -5,6 +5,8 @@ import org.junit.rules.ExpectedException;
 import org.junit.Assert;
 import org.junit.Rule;
 
+import java.io.IOException;
+
 /**
  * The FileIOTest provides simple test cases for
  * the class FileIO
@@ -69,4 +71,5 @@ public class FileIOTest {
     public void testReadFileContainsInvalidEntries() {
         Assert.assertArrayEquals(new int[] {345, 76, 2345, 99}, file.readFile("src/test/resources/invalidEntries.txt"));
     }
+
 }
