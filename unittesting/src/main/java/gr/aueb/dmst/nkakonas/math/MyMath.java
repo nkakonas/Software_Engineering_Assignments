@@ -35,17 +35,12 @@ public class MyMath {
     public boolean isPrime(int n) {
         if (n < 2) throw new IllegalArgumentException();
         boolean prime = true;
-        if(n <= 1) {
-            prime = false;
-            return prime;
-        } else {
-            for (int i = 2; i<= n/2; i++) {
-                if ((n % i) == 0) {
-                    prime = false;
-                    break;
-                }
+        for (int i = 2; i<= n/2; i++) {
+            if ((n % i) == 0) {
+                prime = false;
+                break;
             }
-        return prime;
         }
+        return prime;
     }
 }
