@@ -35,8 +35,9 @@ public class MyMath {
     public boolean isPrime(int n) {
         if (n < 2) throw new IllegalArgumentException();
         boolean prime = true;
-        for (int i = 2; i<= n/2; i++) {
-            if ((n % i) == 0) {
+        for (int i = 2; i <= n / 2; ++i) {
+            // condition for nonprime number
+            if (n % i == 0) {
                 prime = false;
                 break;
             }

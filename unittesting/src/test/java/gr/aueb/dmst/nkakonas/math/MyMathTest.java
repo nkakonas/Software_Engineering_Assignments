@@ -54,11 +54,11 @@ public class MyMathTest {
 
 	@Test
 	public void testIsPrimeYes() {
-		Assert.assertEquals(true, myMath.isPrime(3));
+		Assert.assertEquals(true, myMath.isPrime(23));
 	}
 
 	@Test
 	public void testIsPrimeNo() {
-		Assert.assertEquals(false, myMath.isPrime(4));
+		Assert.assertEquals(false, myMath.isPrime(30));
 	}
 }
