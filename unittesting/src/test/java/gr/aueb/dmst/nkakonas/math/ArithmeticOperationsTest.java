@@ -186,9 +186,7 @@ public class ArithmeticOperationsTest {
 	 */
 	@Test
 	public void test_multiply_negative_zero_valid() {
-		thrown.expect(IllegalArgumentException.class);
-		thrown.expectMessage("x & y should be >= 0");
-		ath.multiply(-2345, 0);
+		Assert.assertEquals(0, ath.multiply(-2345, 0), 0);
 	}
 
 	/**
@@ -221,8 +219,7 @@ public class ArithmeticOperationsTest {
 	 */
 	@Test
 	public void test_multiply_positive_zero_not_valid() {
-		thrown.expect(ArithmeticException.class);
-		ath.multiply(9, 0);
+		Assert.assertEquals(0, ath.multiply(2345, 0), 0);
 	}
 
 	/**
@@ -231,8 +228,7 @@ public class ArithmeticOperationsTest {
 	 */
 	@Test
 	public void test_multiply_both_zero_valid() {
-		thrown.expect(ArithmeticException.class);
-		ath.multiply(0, 0);
+		Assert.assertEquals(0, ath.multiply(0, 0), 0);
 	}
 
 	/**
@@ -241,8 +237,7 @@ public class ArithmeticOperationsTest {
 	 */
 	@Test
 	public void test_multiply_positive_zero_valid() {
-		thrown.expect(ArithmeticException.class);
-		ath.multiply(2345, 0);
+		Assert.assertEquals(0, ath.multiply(234, 0), 0);
 	}
 
 }
