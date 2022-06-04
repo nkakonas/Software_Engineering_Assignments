@@ -14,8 +14,8 @@
 
 - This project is using Maven for better organization.
 - This Maven Project has two modules insede:
-    - gradeshistogram -- [jump on github](#https://github.com/NikosKakonas/Software_Engineer_Assignments/tree/development/gradeshistogram)
-    - unittesting -- [jump on github](#https://github.com/NikosKakonas/Software_Engineering_Assignments/tree/development/unittesting)
+    - [gradeshistogram](/gradeshistogram/README.md)
+    - [unittesting](/unittesting/README.md)
 
 ##### [back to the contents](#contents)
 
