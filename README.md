@@ -1,6 +1,6 @@
 # Software Engeneering Assignments
 
-[![Build Status](https://app.travis-ci.com/NikosKakonas/Software_Engineer_Assignments.svg?token=q3jjbE7gJy3ezkAwFoGo&branch=development)](https://app.travis-ci.com/NikosKakonas/Software_Engineer_Assignments)
+[![Build Status](https://app.travis-ci.com/NikosKakonas/Software_Engineering_Assignments.svg?token=q3jjbE7gJy3ezkAwFoGo&branch=main)](https://app.travis-ci.com/NikosKakonas/Software_Engineering_Assignments)
 
 ## Contents
 
