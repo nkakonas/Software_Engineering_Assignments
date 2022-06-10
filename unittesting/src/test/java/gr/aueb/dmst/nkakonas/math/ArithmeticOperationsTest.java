@@ -166,7 +166,7 @@ public class ArithmeticOperationsTest {
 	public void test_multiply_both_negative_valid() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("x & y should be >= 0");
-		ath.multiply(-78, 23);
+		ath.multiply(-78, -23);
 	}
 
 	/**
@@ -203,17 +203,6 @@ public class ArithmeticOperationsTest {
 		ath.multiply(2147483646, 678);
 	}
 
-	/**
-	 * Tests if the method multiply throws a IllegalArithmeticException
-	 * and if it throws the expected message, while using (+, -) parameters
-	 * and x is NOT valid.
-	 */
-	@Test
-	public void test_multiply_positive_negative_not_valid() {
-		thrown.expect(IllegalArgumentException.class);
-		thrown.expectMessage("x & y should be >= 0");
-		ath.multiply(9, -678);
-	}
 
 	/**
 	 * Tests if the method multiply throws a ArithmeticException,
