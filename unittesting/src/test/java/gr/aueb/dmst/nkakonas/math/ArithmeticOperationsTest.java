@@ -113,7 +113,7 @@ public class ArithmeticOperationsTest {
 
 	/**
 	 * Tests if the result from method multiply is valid, while using
-	 * (+, +) parameters and x is VALID.
+	 * (+, +) parameters - VALID.
 	 */
 	@Test
 	public void test_multiply_both_positive_valid() {
@@ -122,7 +122,7 @@ public class ArithmeticOperationsTest {
 
 	/**
 	 * Tests if the result from method multiply is valid, while using
-	 * (0, +) parameters and x is VALID.
+	 * (0, +) parameters - VALID.
 	 */
 	@Test
 	public void test_multiply_zero_positive_valid() {
@@ -138,7 +138,7 @@ public class ArithmeticOperationsTest {
 
 	/**
 	 * Tests if the result from method multiply is valid, while using
-	 * (+, -) parameters and x is VALID.
+	 * (+, -) parameters - VALID.
 	 */
 	@Test
 	public void test_multiply_positive_negative_valid() {
@@ -149,7 +149,7 @@ public class ArithmeticOperationsTest {
 
 	/**
 	 * Tests if the result from method multiply is valid, while using
-	 * (-, +) parameters and x is VALID.
+	 * (-, +) parameters - VALID.
 	 */
 	@Test
 	public void test_multiply_negative_positive_valid() {
@@ -160,7 +160,7 @@ public class ArithmeticOperationsTest {
 
 	/**
 	 * Tests if the result from method multiply is valid, while using
-	 * (-, -) parameters and x is VALID.
+	 * (-, -) parameters - VALID.
 	 */
 	@Test
 	public void test_multiply_both_negative_valid() {
@@ -171,7 +171,7 @@ public class ArithmeticOperationsTest {
 
 	/**
 	 * Tests if the result from method multiply is valid, while using
-	 * (0, -) parameters and x is VALID.
+	 * (0, -) parameters - VALID.
 	 */
 	@Test
 	public void test_multiply_zero_negative_valid() {
@@ -182,7 +182,7 @@ public class ArithmeticOperationsTest {
 
 	/**
 	 * Tests if the result from method multiply is valid, while using
-	 * (-, 0) parameters and x is VALID.
+	 * (-, 0) parameters - VALID.
 	 */
 	@Test
 	public void test_multiply_negative_zero_valid() {
@@ -194,7 +194,7 @@ public class ArithmeticOperationsTest {
 	/**
 	 * Tests if the method multiply throws a IllegalArithmeticException
 	 * and if it throws the expected message, while using (+, +) parameters
-	 * and x is NOT valid.
+	 * - NOT valid.
 	 */
 	@Test
 	public void test_multiply_both_positive_not_valid() {
@@ -217,7 +217,7 @@ public class ArithmeticOperationsTest {
 
 	/**
 	 * Tests if the result from method multiply is valid, while using
-	 * (0, 0) parameters and x is VALID.
+	 * (0, 0) parameters - not VALID.
 	 */
 	@Test
 	public void test_multiply_both_zero_valid() {
@@ -228,13 +228,13 @@ public class ArithmeticOperationsTest {
 
 	/**
 	 * Tests if the result from method multiply is valid, while using
-	 * (+, 0) parameters and x is VALID.
+	 * (+, 0) parameters - not VALID.
 	 */
 	@Test
 	public void test_multiply_positive_zero_valid() {
 		thrown.expect(ArithmeticException.class);
 		thrown.expectMessage("x & y should be >= 0");
-		Assert.assertEquals(0, ath.multiply(234, 0), 0);
+		ath.multiply(234, 0);
 	}
 
 }
