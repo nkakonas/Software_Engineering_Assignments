@@ -15,7 +15,7 @@
             
     <module>gradeshistogram</module>
     <module>unittesting</module>
-    <module>sourcecodeanalyzer</module>
+    <module>SourceCodeAnalyzer</module>
 
   </modules>
       

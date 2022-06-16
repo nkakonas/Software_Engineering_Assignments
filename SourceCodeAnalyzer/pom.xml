@@ -6,9 +6,8 @@
     	<artifactId>seip2022_practical_assignments</artifactId>
     	<groupId>gr.aueb.dmst.nkakonas</groupId>
     	<version>1.0-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
   	</parent>
-	<artifactId>sourcecodeanalyzer</artifactId>
+	<artifactId>SourceCodeAnalyzer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Design Patterns assignment's code base</name>
 	<description>This module contains the code base that will serve as the starting point for the design pattern assignment</description>
