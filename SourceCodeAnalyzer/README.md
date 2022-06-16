@@ -1,14 +1,23 @@
 # SourceCodeAnalyzer
 
 ## Contents
-
+---
 1. [Purpose of the project](#purpose-of-the-project)
 2. [Requirements](#requirements)
-3. [How to build and run the project](#how-to-run-the-project)
+3. [How to build and run the project](#how-to-build-and-run-the-project)
 4. [Process of performing the exercise](#process-of-performing-the-exercise)
-5. [LICENSE](#license-mit)
+	- 4.1 [Intoduction](#introduction)
+	- 4.2 [UML Diagram](#uml-diagram)
+	- 4.3 [Covered Requirements](#covered-requirements)
+	- 4.4 [Design Patterns](#design-patterns)
+		- 4.4.1 [Strategy](#strategy)
+		- 4.4.2 [Factory](#factory)
+		- 4.4.3 [Null Object](#null-object)
+		- 4.4.4 [Facade](#facade)
+
 
 ## Purpose of the project:
+---
 In this module we practice the implementation of design patterns.
 
 In this project it is given a Java source code file that is stored locally or on the web, it calculates the Lines of Code (LOC), Number of Classes (NOC) and Number of Methods (NOM) metrics, and in the end exports these metrics in a file.
@@ -16,11 +25,12 @@ In this project it is given a Java source code file that is stored locally or on
 The purpose of the assignment is to modify the code and implement some design patterns, in order to improve the design quality of the system.
 
 ## Requirements
+---
 - maven
 - java
 
 ## How to build and run the project
-
+---
 1. In order to build the project press:
 
 	```bash
@@ -49,7 +59,7 @@ The purpose of the assignment is to modify the code and implement some design pa
 
 
 ## Process of performing the exercise
-
+---
 ### Introduction
 The following class diagram visualizes the refactored source code analyzer.
 
@@ -60,12 +70,11 @@ In this UML diagram there are 3 packages:
 
 For instance, I will describe one package. Inside the package `exporter` there is the interface `MetricsExporter`, which contains only the method `writeFile(...)`. There are also 3 classes, `CsvExporter`, `JsonExporter` and `NullExporter` that implement the interface `MetricsExtractor` and finally there is the class `MetricsExporterManager`, that it is responsible for creating the interface.
 
----
 
 ### UML Diagram
 ![](https://github.com/NikosKakonas/Software_Engineering_Assignments/blob/development/SourceCodeAnalyzer/src/main/resources/UML.png)
 
----
+
 
 ### Covered Requirements
 All design decisions that led to the current design were taken to satisfy the following requirements:
@@ -74,8 +83,9 @@ All design decisions that led to the current design were taken to satisfy the fo
 3. Within the classes, reduce complexity and code duplication
 4. Make the system reusable for a variety of clients (minimize coupling with Client)
 
----
 
+## Design Patterns
+---
 ### Strategy
 
 For each dimension (SourceAnalyzers, MetricsExporters, ContentReaders) a Strategy pattern was applied. In each case we introduced an interface that describes the functionalities that the concrete classes should implement. The application of this pattern has the following advantages(+) and disadvantages(-) to our system:
