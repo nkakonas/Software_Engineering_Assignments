@@ -13,9 +13,10 @@
 ## Purpose of the project:
 
 - This project is using Maven for better organization.
-- This Maven Project has two modules insede:
+- This Maven Project has tree modules inside:
     - [gradeshistogram](/gradeshistogram/README.md)
     - [unittesting](/unittesting/README.md)
+    - [SorceCodeAnalyzer](/SourceCodeAnalyzer/README.md)
 
 ##### [back to the contents](#contents)
 
